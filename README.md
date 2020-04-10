@@ -1,6 +1,6 @@
-<center>
-    <img src="./6254009.png">
-</center>
+<p align="center">
+    <img src="./6254009.png" width="200" alt="SayJeyHi himself" />
+</p>
 
 ## What is this?
 
