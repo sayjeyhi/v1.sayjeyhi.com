@@ -1,4 +1,4 @@
-<p align="left">
+<p align="center">
     <img src="./Jey.png" width="480" alt="SayJeyHi himself" />
 </p>
 
