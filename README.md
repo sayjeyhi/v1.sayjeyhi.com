@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./6254009.png" width="200" alt="SayJeyHi himself" />
+    <img src="./6254009.png" width="180" alt="SayJeyHi himself" />
 </p>
 
 ## What is this?
