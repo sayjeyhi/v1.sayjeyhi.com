@@ -1,5 +1,5 @@
 <center>
-    <img src="./6254009.svg">
+    <img src="./6254009.png">
 </center>
 
 ## What is this?
