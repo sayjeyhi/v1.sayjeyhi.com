@@ -1,5 +1,5 @@
 <center>
-    <img src="./MariotekLogo.png">
+    <img src="./6254009.svg">
 </center>
 
 ## What is this?
