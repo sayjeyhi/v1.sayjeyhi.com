@@ -13,6 +13,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
+    "test": "echo \"Will write tests! :) -> https://gatsby.dev/unit-testing\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
