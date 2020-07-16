@@ -1,41 +1,79 @@
+require(`dotenv`).config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    siteTitle: `SayJeyHi`,
+    siteHeadline: `SayJeyHi`,
+    siteDescription: "My personal site to add my projects and demo files",
+    siteTitleAlt: `SayJeyHi - Jafar Rezaei`,
+    siteImage: `/android-icon-192x192.png`,
+    siteLanguage: "en",
+    siteUrl: "https://sayjeyhi.com",
+    author: "@sayjeyhi",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
+      // See the theme's README for all available options
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        navigation: [
+          {
+            title: `Blog`,
+            slug: `/blog`,
+          },
+          {
+            title: `About`,
+            slug: `/about`,
+          },
+        ],
+        externalLinks: [
+          {
+            name: `Twitter`,
+            url: `https://twitter.com/sayjeyhi`,
+          },
+          {
+            name: `Instagram`,
+            url: `https://www.instagram.com/sayjeyhi/`,
+          },
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `SayJeyHi`,
+        short_name: `minimal-blog`,
+        description: `My personal site to add my projects and demo files`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#fff`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/android-icon-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/android-icon-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        defaultLangKey: "en",
-        useLangKeyLayout: false,
-      },
-    },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
-}
+};
