@@ -1,6 +1,6 @@
 require(`dotenv`).config({
   path: `.env`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -20,12 +20,12 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Books`,
-            slug: `/books`,
-          },
-          {
             title: `Blog`,
             slug: `/blog`,
+          },
+          {
+            title: `Books`,
+            slug: `/books`,
           },
           {
             title: `About`,
@@ -55,7 +55,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `SayJeyHi`,
-        short_name: `minimal-blog`,
+        short_name: `SayJeyHi blog`,
         description: `My personal site to add my projects and demo files`,
         start_url: `/`,
         background_color: `#fff`,
@@ -63,14 +63,40 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            src: `/android-icon-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
+            src: "/android-icon-36x36.png",
+            sizes: "36x36",
+            type: "image/png",
+            density: "0.75",
           },
           {
-            src: `/android-icon-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
+            src: "/android-icon-48x48.png",
+            sizes: "48x48",
+            type: "image/png",
+            density: "1.0",
+          },
+          {
+            src: "/android-icon-72x72.png",
+            sizes: "72x72",
+            type: "image/png",
+            density: "1.5",
+          },
+          {
+            src: "/android-icon-96x96.png",
+            sizes: "96x96",
+            type: "image/png",
+            density: "2.0",
+          },
+          {
+            src: "/android-icon-144x144.png",
+            sizes: "144x144",
+            type: "image/png",
+            density: "3.0",
+          },
+          {
+            src: "/android-icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+            density: "4.0",
           },
         ],
       },
@@ -84,4 +110,4 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
-};
+}

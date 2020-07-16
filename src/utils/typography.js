@@ -6,7 +6,7 @@ import "typeface-lalezarregular"
 const typography = new Typography({
   overrideThemeStyles: () => ({
     body: {
-      fontSize: "1.3rem",
+      fontSize: "1.2rem",
     },
     a: {
       color: "rgb(117, 138, 106)",
@@ -19,6 +19,9 @@ const typography = new Typography({
     },
     ".-lalezar": {
       fontFamily: "Lalezar-Regular, sans-serif",
+    },
+    footer: {
+      fontSize: "1rem",
     },
   }),
 })
