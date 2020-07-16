@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^2.4.0",
-    "babel-eslint": "^10.1.0",
     "gatsby": "^2.24.3",
     "gatsby-plugin-google-analytics": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.18",
@@ -29,6 +28,7 @@
     "gatsby-plugin-offline": "^3.2.18",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-typography": "^2.5.10",
+    "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-typography": "^0.16.19",
@@ -38,6 +38,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.4.0",
     "eslint-config-airbnb": "^18.2.0",
