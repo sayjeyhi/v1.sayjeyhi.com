@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build && gh-pages  -d public -r https://$GH_TOKEN@github.com/sayjeyhi/sayjeyhi.com",
+    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/sayjeyhi/sayjeyhi.com",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
