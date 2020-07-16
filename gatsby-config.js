@@ -71,8 +71,12 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
