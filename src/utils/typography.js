@@ -5,6 +5,9 @@ import "typeface-lalezarregular"
 
 const typography = new Typography({
   overrideThemeStyles: () => ({
+    body: {
+      fontSize: "1.3rem",
+    },
     a: {
       color: "rgb(117, 138, 106)",
     },
