@@ -38,8 +38,8 @@ module.exports = {
             url: `https://twitter.com/sayjeyhi`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/sayjeyhi/`,
+            name: `Github`,
+            url: `https://github.com/sayjeyhi`,
           },
         ],
       },
