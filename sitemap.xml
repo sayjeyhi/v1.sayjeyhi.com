@@ -6,6 +6,9 @@
 <url> <loc>https://sayjeyhi.com/the-jey-back-again</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://sayjeyhi.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://sayjeyhi.com/books</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://sayjeyhi.com/certs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://sayjeyhi.com/media-radio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://sayjeyhi.com/media-tv</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://sayjeyhi.com/tags/hello</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://sayjeyhi.com/tags/sayjeyhi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://sayjeyhi.com/tags/world</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
