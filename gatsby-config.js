@@ -15,6 +15,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-MG7Z4SE26B",
+        head: true,
+      },
+    },
+    {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
@@ -50,12 +57,6 @@ module.exports = {
             url: `https://github.com/sayjeyhi`,
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'G-MG7Z4SE26B',
       },
     },
     `gatsby-plugin-sitemap`,
