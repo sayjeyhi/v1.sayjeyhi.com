@@ -28,8 +28,12 @@ module.exports = {
             slug: `/books`,
           },
           {
-            title: `About`,
-            slug: `/about`,
+            title: `Radio`,
+            slug: `/media-radio`,
+          },
+          {
+            title: `TV`,
+            slug: `/media-tv`,
           },
         ],
         externalLinks: [
