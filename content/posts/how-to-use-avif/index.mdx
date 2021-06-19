@@ -1,0 +1,90 @@
+---
+title: How to use AVIF
+date: 2020-08-02
+tags:
+  - performance
+  - avif
+  - webp
+  - image
+  - web
+---
+
+# How to use the new avif image format?
+
+One or two hours ago, Addy Osmani tweeted that a new format had been released that could have a huge impact on the loading speed of web pages.
+Well, I also took the booty as an opportunity, I said to write a small blog post about it ..
+
+
+<img src="https://files.virgool.io/upload/users/33820/posts/czzk5dgiu6aq/mhnvmxsgmbd4.png" />
+Addy Osmani
+
+
+Well, with a look at this piece of code, we can see that it is very easy to use, just put another `source` in the` picture` block. Which is used to load avif. But what is this format? How to create avif images and how to use it? In this short article, you can find the answer to this question.
+
+
+Compare with other players
+This technology, which came after webp and is a next generation format for images, is very exciting because compared to jpeg and even webp, which itself was a very small format, it is smaller!
+
+<img src="https://files.virgool.io/upload/users/33820/posts/czzk5dgiu6aq/pdjmuxmbt21c.png" />
+woah!
+
+The above image is enough to make us think a little and then we will be challenged a little so that we can plan for using this format. AV1 format (or .avif) is a super format for minimizing images.
+Yes, this format is very, very optimistic and can load one of the main elements of web pages, which are images, faster. The challenge of loading images has always been present for large companies and they are looking for new solutions to this issue. As we speak, the great Netflix explained in this blog post that it uses AVIF for images.
+
+
+The point is interesting when we go and check the caniuse. Considerable result! Only 5% of browsers currently support this format.
+
+<img src="https://files.virgool.io/upload/users/33820/posts/czzk5dgiu6aq/tvcjuwmxmdk7.png" />
+
+can i use avif
+For now, you might say that we should go to this format soon. But considering the amount of improvement it gives in web pages, it is worthwhile to do the conversion and have a piece of code in our code for it.
+Of course, it is very likely that we will soon see widespread support for it. In addition to the fact that we support the same webp, which is now supported by about 85% of browsers (but well worth it).
+
+
+Is it wrong to use it now ?!
+Support for avif has been added in Chrome 85 and Firefox 80, and if we put an avif file in the img tag, it will not load and even your current browser will most likely not support this format, and if the latest canary version of Google Chrome Do not open avif images. Even Firefox currently has to enable the avif flag from the settings.
+
+<img src="https://files.virgool.io/upload/users/33820/posts/czzk5dgiu6aq/jrw1uvkg8bf9.webp" />
+Enable flag avif for Firefox
+
+
+But this does not mean not using it! Because, as you know, the picture tag can be used, and this tag allows if the browser supports the format we want. Image loading can be done with that format and so-called progressive image loading, so feel free to convert all images to webp and avif formats today and load in your source code with picture and source tags.
+
+&lt;picture&gt;
+
+&lt;source srcset=&quot;img/photo.avif&quot; type = &quot;image / avif&quot; /&gt;
+
+&lt;source srcset=&quot;img/photo.webp&quot; type = &quot;image / webp&quot; /&gt;
+
+&lt;img src=&quot;img/photo.jpg&quot; alt = &quot;Description of Photo&quot; /&gt;
+
+&lt;/picture&gt;
+
+
+How to convert images?
+Well, of course, libraries that convert to this format are also growing very fast, for example, as a Squoosh online service that can be used to convert to this format. (Of course, the avif version is here on netlify). Of course, Google PR Lab is active on GitHub to appear on squoosh (link).
+If you want to do this conversion programmatically, or you can do this conversion in the cli environment, you can use libavif written with c, or install it on the macos environment with Homebrew.
+brew install joedrago / repo / avifenc
+avifenc --help
+
+
+In short, we hope to see these cool experiences soon on in-house projects and experience the joy of speeding web pages more.
+
+
+
+
+Resources:
+
+https://aomediacodec.github.io/av1-avif/
+
+https://www.ctrl.blog/entry/webp-avif-comparison.html
+
+https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4
+
+https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/
+
+
+
+<span dir="rtl" className="-vazir">
+<a href="https://vrgl.ir/EKt7v" target="_blank" >به زبان فارسی</a>
+</span>

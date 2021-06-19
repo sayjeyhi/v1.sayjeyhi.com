@@ -1,0 +1,140 @@
+---
+title: A bad javascript bug
+date: 2020-07-17
+tags:
+  - javascript
+  - bug
+  - programming
+  - react
+  - SSR
+  - cookie
+---
+
+
+## A bad bug and a JavaScript scroll - an anecdote from Snapp market
+
+Hi, I'm <a href="https://sayjeyhi/about">Jafar Rezaei</a>, one of the guys on the Frontend team at <a href="https://snapp.market">Snappmarket</a>.
+
+I am writing this blog post at 3:44am, 20th of May 2020, and now, at midnight the next day, there is a problem with managing nodejs cookies for the server on the new site project presentation server.
+
+
+<div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+<img width="90%" alt="Magnifying glass and photos" src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/tknvoa0iw13h.jpeg" />
+</div>
+
+Magnifying glass and photos
+
+<br/>
+
+
+If you are not aware of the problem that occurred, let me first say what the problem was ... This problem that took about 2 hours and 2 minutes on production and for 10 cases from the main traffic site that was tested as A / B transferred to a new site It happened, and caused the user to use their jwt token at the same time as opening the site, and after loading the page, instead of his own panel, see another person's panel.
+
+If it is registered according to the order, this has happened for a few cases, and if your request is to be registered with its correct address, because it indicates that it works with its own panel.
+
+
+
+Well, so far I have talked about the first sequence that described the problem, the second sequence is about technical issues, the reason for this problem and the solution we took to solve it faster.
+
+First, I would like to ask a question, what should you do if for any reason Yahoo has this problem on your website? I asked myself this question several times today, how in that moment how could I make the most accurate decision in the shortest time! To tell the truth, after seeing the bug, it looked like this:
+
+
+
+<img alt="My face modes - from left to right" src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/owxpcpsebb8n.jpeg" />
+My face modes - from left to right
+
+<br/>
+
+
+Well, the first thing I did, and you probably did, was that the new diploma might have a problem because you turned it around and sent it back up ... the problem was not solved! Because before I was not into something that I think caused a problem, so we went to read the code.
+
+
+
+It may be difficult to identify a few that may be from Eva.
+
+Authentication of bugs in the service
+The jwt token is incorrect and there is a bug in the token that causes the token to refresh
+Render markup shift for users in Express
+Cookies on the nodejs server
+The first 2 theories are rejected with a simple review. The third case is illegal and gives you the most thought, and the only thing left was a cookie ...
+
+A brief review of the team kids on the cookie was inconclusive and there were no bugs, plus it could not fix the problem on stage.
+
+
+
+<img alt="Mr. Subasa" src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/i0gxggsqrije.jpeg" />
+Mr. Subasa
+
+
+Of course, considering that the Subasa cartoon will not be aired, and the more time it takes to review, the more errors there are in the production budget. So as soon as it is imagined, in that moment, there are two ways:
+
+Find a way to quickly fix the problem and then fix the exact method
+Let's take a full look at the problem and solve the basic bug
+He should definitely choose the first way, but how should we fix the problem ?! What exactly is causing this problem?
+
+Here I thought for a moment about the flow and the possibility of creating an error with the readable flow in nodejs. Previously, Twitter had a conversation with the creator of Preact Mr. I had a developit (link) that from another of their packages on NewSite and using the stream causes, but very soon he made many issues clear to me.
+
+
+
+https://github.com/GoogleChromeLabs/critters/issues/53
+
+<img alt="One issue, one classroom!" src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/shm9zla3lva2.png" />
+One issue, one classroom!
+
+
+
+
+One of the good things about this conversation was the way it flowed through Nodis. For example, you nodejs any size of data for the stream that you are still coming to send the blocked 16kbt Toyota to the client, that is if you play 610kb html of stream if this 4 block test is done.
+
+
+
+
+So think about it, maybe we had a problem with the broadcast. Given the flexible architecture that is created to provide the server side on the news site (which I will probably explain in another post or publish as open source), the first and easiest thing to do is to render through the stream to the string and diploma. the budget.
+
+Fortunately, after this diploma, no error was seen on the children's system, and it seems that the problem was solved, but if there was a problem, it still existed!
+
+A user who logs in before must be considered by a person who does not take himself out of the field ... A patch has been written for this issue and the first step is to do more errors. But so far we have only been able to do without causing the bug to become the main cause, because it causes more.
+
+
+<img alt="stream" src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/xcuns0r3eljt.png" />
+
+
+
+Now the third sequence: the situation is a bit more aromatic and it caused us to find and solve the main problem ... what exactly was the problem ?! I mean, should we stream ?! is it possible!
+
+If you were careful, part of the talk was that a flexible structure was built for SSR. This structure works in a modular way and even without changing the code, it can be CSR and supports laziness and suspension on ssr, and in general, it can even request an api for any non-existent component and different features. other. (I know you are hypocritical for now, not all of them are suspended for the server, but ssr-prepass from the kitten makes it possible for you to tie the knot :))
+
+<img src="https://files.virgool.io/upload/users/33820/posts/whkb1iyhqmib/hpukkak1rdqg.jpeg" alt="https://github.com/kitten" />
+https://github.com/kitten
+
+
+This architecture causes us to have a series of different challenges, one of which is that in order to make the system modular, there was a way to manage cookies. Well, we know that on the server, if we are working with Express, I will use you to send res.cookie to the cookie client whatever you request.
+
+But if we had a module for http requests that communicated with another module that controlled the jwt token management control, how can we use it in that context ?! You may ask why do we need res? Because, for example, assuming you have a jwt token and that token has expired, we have to make a new token for you without you being in the process of exchanging the token, when it is for using the server, so your token needs to be written a cookie ...
+
+We have to save it separately for each of your requests, which is easy to manage and does not require container maintenance, etc., like redis. A popular package called node-continue-local-storage is used
+
+https://github.com/othiym23/node-continuation-local-storage
+
+
+
+With this package, a unique namespace can be created for each request, allowing us to store a series of variables in one session, allowing you to exist anywhere in the program. That is, it acts as a gateway for data exchange.
+
+So use res and req in all available modules. But the problem occurs when the stream does and may send 16kb message to the browser. If this is synchronous, if nodejs is synchronous to run your program, the existing text will be used and its form will be used as if it is changing somewhere. So in one block of the data stream is correct, the pipe can and in the next block it is read from the wrong place from memory! So a bug is created.
+
+
+
+Now that we are renderToString, but from the side that manages, we changed between modules and instead of working on the cookie axis, use the data in the form of Twitter closure related to the same management module.
+
+Due to the fact that when your page is refreshed, it has become possible not to go through the authentication software and it needs to be refreshed, and this will make your token change again. In this worst case scenario, due to the synchronicity of users, an active user has refreshed and seen the information of 7 other people (fixed people) in the same period.
+
+
+
+
+
+I hope my explanation is sufficient and clear, if you have any questions, I will be happy to ask. I hope that the culture of expressing the cause of the Baguars' accident and accepting the bug-eating systems develops our art and culture. Another thing is that we have promoted a new part of the source in the new Snap Market website as open source and Twitter is available, we are happy to refer to your books and tell us your opinion :) And finally, I hope Farhang Let's leave the open source more and more
+
+https://github.com/snappmarket
+
+<span dir="rtl" className="-vazir">
+<a href="https://vrgl.ir/Nf0VU" target="_blank" >به زبان فارسی</a>
+</span>
