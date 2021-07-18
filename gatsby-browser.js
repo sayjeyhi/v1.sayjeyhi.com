@@ -5,3 +5,9 @@ import { RecoilRoot } from "recoil"
 export const wrapRootElement = ({ element }) => (
   <RecoilRoot>{element}</RecoilRoot>
 )
+
+// gatsby-browser.js
+export const onServiceWorkerUpdateReady = () => {
+  console.log("updated!")
+  window.location.reload(true)
+}
