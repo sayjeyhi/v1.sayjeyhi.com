@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{w2l6:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),o=a("Q3iF"),l=a("GIzu");t.default=function(){return r.a.createElement(o.a,null,r.a.createElement(l.a,{title:"404 error",description:"We do not have that page tho"}),r.a.createElement("h2",null,"Er00r 404"),r.a.createElement("div",null,"I do not have that page tho"))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-b09cbb7f88e7fd792ab9.js.map
