@@ -53,8 +53,8 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/sayjeyhi`,
+            name: `About me`,
+            url: `/about`,
           },
           {
             name: `Github`,
@@ -120,7 +120,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: process.env.node_env === "development",
+      },
+    },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-netlify`,
   ],
 }
