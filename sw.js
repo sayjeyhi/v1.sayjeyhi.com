@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "0a301732-bf6cbe5c18139b3b2123.js"
   },
   {
-    "url": "app-0e7055cae9641a986d48.js"
+    "url": "app-0a1dc00da634699d1716.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "f75c9d9b40dc48a33a69d0c22d53bc59"
+    "revision": "935727823fdd987b188d9dacec665433"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-d2f6372de0f9d26c322c.js"
@@ -60,10 +60,10 @@ self.__precacheManifest = [
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\/page-data\/app-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/, new workbox.strategies.NetworkFirst({ "networkTimeoutSeconds":1, plugins: [] }), 'GET');
 workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/\/$/, new workbox.strategies.NetworkFirst({ "networkTimeoutSeconds":1, plugins: [] }), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
 importScripts(`idb-keyval-3.2.0-iife.min.js`)
@@ -147,7 +147,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-0e7055cae9641a986d48.js`))) {
+  if (!resources || !(await caches.match(`/app-0a1dc00da634699d1716.js`))) {
     return await fetch(event.request)
   }
 
