@@ -23,10 +23,10 @@ const BooksSlider = () => (
     navigation
   >
     <SwiperSlide>
-      <img src="/books/react.jpeg" alt="react" />
+      <img src="/files/books/react.jpeg" alt="react" />
     </SwiperSlide>
     <SwiperSlide>
-      <img src="/books/javascript.jpg" alt="javascript" />
+      <img src="/files/books/javascript.jpg" alt="javascript" />
     </SwiperSlide>
   </Swiper>
 )
