@@ -39,16 +39,16 @@ module.exports = {
             slug: `/books`,
           },
           {
-            title: `Certificates`,
-            slug: `/certs`,
-          },
-          {
             title: `Radio`,
             slug: `/media-radio`,
           },
           {
             title: `TV`,
             slug: `/media-tv`,
+          },
+          {
+            title: `Certificates`,
+            slug: `/certs`,
           },
         ],
         externalLinks: [
