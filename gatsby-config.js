@@ -159,7 +159,7 @@ module.exports = {
             },
           ],
         },
-      },xw
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify`,
