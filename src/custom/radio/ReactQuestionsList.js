@@ -9,7 +9,7 @@ const ReactQuestionsList = () =>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
         <audio controls>
           <source
-            src={`/files/radio/javascript-question/${index + 1}.ogg`}
+            src={`/files/radio/react-question/${index + 1}.ogg`}
             type="audio/ogg"
           />
           Your browser does not support the audio element.
